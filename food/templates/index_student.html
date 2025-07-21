@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title|upper}}</title>
+</head>
+<body>
+    <table border="2",cellpadding="10">
+        <tr>
+            <th>Student Name</th>
+            <th>Percentage</th>
+            <th>Age</th>
+            <th>Can Vote</th>
+        </tr>
+
+        {% for st in student %}
+            <tr>
+                <td>{{st.name}}</td>
+                <td>{{st.per}}</td>
+                <td>{{st.age}}</td>
+            
+            <td {% if st.age < 18 %} style="background-color: red" {% else %} style="background-color: green"{% endif %};>
+        {% if st.age >= 18 %}
+            &#128077
+        {% else %}
+        &#128078
+        {% endif %}
+        </td>
+    </tr>
+        {% endfor %} 
+
+
+    </table>
+    <p>{{text|truncatechars:4}}</p>
+    <!-- {% for item in item_list %}
+        abcdefgh {{ item.id}} -- {{item.item_name}}
+    {% endfor %}  -->
+
+   
+    <!-- <table border="2",cellpadding="10">
+        <tr>
+            <th>ID</th>
+            <th>Item Name</th>
+            <th>Item Price</th>
+            <th>Item Description</th>
+        </tr>
+
+        {% for item in item_list %}
+            <tr>
+                <td>{{item.id}}</td>
+                <td>{{item.item_name}}</td>
+                <td>{{item.item_price}}</td>
+                <td>{{item.item_desc}}</td>
+            </tr>
+
+        {% endfor %}
+
+
+    </table> -->
+</body>
+</html>
+

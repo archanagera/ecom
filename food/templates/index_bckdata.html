@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <style>
+        .main{
+            width:1000px;
+            background-color: red;
+            color: white;
+            padding: 20px;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    {% for n in  items%}
+    <div>{{forloop.revcounter0}} {{n}}</div>
+    {% endfor %}
+    <div class="main"><p><b>{{bdata}}{{items}}</b></p></div>
+    <table border="1",cellpadding="10">
+        <tr>
+            <th>Item Name</th>
+            <th>Item Price</th>
+        </tr>
+        {% for d in item_details %}
+        <tr>
+            <td>{{d.item_name}}</td>
+            <td>{{d.price}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>
